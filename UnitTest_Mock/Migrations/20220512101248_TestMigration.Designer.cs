@@ -3,14 +3,16 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace UnitTest_Mock.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220512101248_TestMigration")]
+    partial class TestMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,26 +36,6 @@ namespace UnitTest_Mock.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Desgination = "Fresher",
-                            Name = "TeoUpdated"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Desgination = "Junior",
-                            Name = "Ty"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Desgination = "Senior",
-                            Name = "Tun"
-                        });
                 });
 #pragma warning restore 612, 618
         }

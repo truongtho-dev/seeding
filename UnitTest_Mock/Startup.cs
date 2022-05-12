@@ -1,3 +1,4 @@
+using Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +13,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using UnitTest_Mock.Model;
 using UnitTest_Mock.Services;
 
 namespace UnitTest_Mock
@@ -36,7 +36,10 @@ namespace UnitTest_Mock
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UnitTest_Mock", Version = "v1" });
             });
 
-            services.AddDbContext<AppDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("default")));
+            services.AddDbContext<AppDbContext>(
+                opt => opt.UseSqlServer(Configuration.GetConnectionString("default"),
+                opt => opt.MigrationsAssembly("UnitTest_Mock")
+            ));
             services.AddScoped<IEmployeeService, EmployeeService>();
         }
 

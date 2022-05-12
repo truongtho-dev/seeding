@@ -2,7 +2,7 @@
 
 namespace UnitTest_Mock.Migrations
 {
-    public partial class Initial : Migration
+    public partial class TestMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

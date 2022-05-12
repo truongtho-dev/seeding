@@ -1,7 +1,7 @@
-﻿using Moq;
+﻿using Entities;
+using Moq;
 using System.Collections.Generic;
 using UnitTest_Mock.Controllers;
-using UnitTest_Mock.Model;
 using UnitTest_Mock.Services;
 using Xunit;
 

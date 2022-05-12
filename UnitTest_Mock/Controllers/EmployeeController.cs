@@ -19,7 +19,7 @@ namespace UnitTest_Mock.Controllers
             _employeeService = employeeService;
         }
 
-		[HttpGet]
+		[HttpGet(nameof(GetEmployees))]
 		public async Task<IEnumerable<Employee>> GetEmployees()
 		{
             var empList = await _employeeService.GetEmployees();

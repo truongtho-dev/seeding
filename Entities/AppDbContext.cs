@@ -13,28 +13,6 @@ namespace Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-            //       modelBuilder.Entity<Employee>()
-            //           .HasData(
-            //               new Employee
-            //{
-            //                   Id = 1,
-            //                   Name = "Teo",
-            //                   Desgination = "Fresher"
-            //},
-            //               new Employee
-            //               {
-            //                   Id = 2,
-            //                   Name = "Ty",
-            //                   Desgination = "Junior"
-            //               },
-            //               new Employee
-            //               {
-            //                   Id = 3,
-            //                   Name = "Tun",
-            //                   Desgination = "Senior"
-            //               }
-            //           );
-
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
 		}
     }

@@ -40,7 +40,7 @@ namespace UnitTest_Mock.Migrations
                         {
                             Id = 1,
                             Desgination = "Fresher",
-                            Name = "TeoUpdated"
+                            Name = "Teo When App Start"
                         },
                         new
                         {

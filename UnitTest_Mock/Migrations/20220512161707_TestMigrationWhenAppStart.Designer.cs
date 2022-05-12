@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace UnitTest_Mock.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220512102101_SeedWork")]
-    partial class SeedWork
+    [Migration("20220512161707_TestMigrationWhenAppStart")]
+    partial class TestMigrationWhenAppStart
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,7 +42,7 @@ namespace UnitTest_Mock.Migrations
                         {
                             Id = 1,
                             Desgination = "Fresher",
-                            Name = "Teo"
+                            Name = "Teo When App Start"
                         },
                         new
                         {

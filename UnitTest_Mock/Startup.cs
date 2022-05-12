@@ -31,6 +31,7 @@ namespace UnitTest_Mock
         {
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UnitTest_Mock", Version = "v1" });
@@ -40,6 +41,7 @@ namespace UnitTest_Mock
                 opt => opt.UseSqlServer(Configuration.GetConnectionString("default"),
                 opt => opt.MigrationsAssembly("UnitTest_Mock")
             ));
+
             services.AddScoped<IEmployeeService, EmployeeService>();
         }
 

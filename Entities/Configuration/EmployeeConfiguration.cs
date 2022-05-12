@@ -16,7 +16,7 @@ namespace Entities.Configuration
                 new Employee
                 {
                     Id = 1,
-                    Name = "TeoUpdated",
+                    Name = "Teo When App Start",
                     Desgination = "Fresher"
                 },
                 new Employee

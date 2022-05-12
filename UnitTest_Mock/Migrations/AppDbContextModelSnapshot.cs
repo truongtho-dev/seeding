@@ -40,7 +40,7 @@ namespace UnitTest_Mock.Migrations
                         {
                             Id = 1,
                             Desgination = "Fresher",
-                            Name = "Teo When App Start"
+                            Name = "David Teo"
                         },
                         new
                         {

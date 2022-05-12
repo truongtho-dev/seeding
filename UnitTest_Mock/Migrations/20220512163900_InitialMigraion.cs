@@ -2,7 +2,7 @@
 
 namespace UnitTest_Mock.Migrations
 {
-    public partial class TestMigrationWhenAppStart : Migration
+    public partial class InitialMigraion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,7 +23,7 @@ namespace UnitTest_Mock.Migrations
             migrationBuilder.InsertData(
                 table: "Employees",
                 columns: new[] { "Id", "Desgination", "Name" },
-                values: new object[] { 1, "Fresher", "Teo When App Start" });
+                values: new object[] { 1, "Fresher", "David Teo" });
 
             migrationBuilder.InsertData(
                 table: "Employees",

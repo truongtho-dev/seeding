@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnitTest_Mock.Controllers.Employee.QueryServices;
+using UnitTest_Mock.Controllers.Employee.View;
 
 namespace UnitTest_Mock
 {
@@ -41,6 +42,8 @@ namespace UnitTest_Mock
                 opt => opt.UseSqlServer(Configuration.GetConnectionString("default"),
                 opt => opt.MigrationsAssembly("UnitTest_Mock")
             ));
+
+            services.AddAutoMapper(typeof(EmployeeViewMapperProfile));
 
             services.AddScoped<IEmployeeService, EmployeeService>();
         }

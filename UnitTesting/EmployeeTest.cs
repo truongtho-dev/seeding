@@ -18,9 +18,9 @@ namespace UnitTesting
 		{
 			mock.Setup(e => e.GetEmployeebyId(11)).ReturnsAsync("Teo");
 
-			EmployeeController ec = new EmployeeController(mock.Object);
+			var empController = new EmployeeController();
 
-			var result = await ec.GetEmployeeById(11);
+			var result = await empController.GetEmployeeById(mock.Object, 11);
 			Assert.Equal("Teo", result);
 		}
 
@@ -34,9 +34,9 @@ namespace UnitTesting
 			};
 
 			mock.Setup(e => e.GetEmployeeDetails(10)).ReturnsAsync(empView);
-			EmployeeController ec = new EmployeeController(mock.Object);
+			var empController = new EmployeeController();
 
-			var result = await ec.GetEmployeeDetails(10);
+			var result = await empController.GetEmployeeDetails(mock.Object, 10);
 
 			Assert.True(empView.Equals(result));
 		}
@@ -59,9 +59,9 @@ namespace UnitTesting
 			};
 
 			mock.Setup(e => e.GetEmployees()).ReturnsAsync(empViewList);
-			EmployeeController emp = new EmployeeController(mock.Object);
+			var empController = new EmployeeController();
 
-			var result = await emp.GetEmployees();
+			var result = await empController.GetEmployees(mock.Object);
 
 			Assert.True(empViewList.Equals(result));
 

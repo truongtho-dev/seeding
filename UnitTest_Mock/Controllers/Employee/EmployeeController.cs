@@ -1,6 +1,4 @@
-﻿using Entities;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,31 +11,30 @@ namespace UnitTest_Mock.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeService _employeeService;
-
-        public EmployeeController(IEmployeeService employeeService)
-        {
-            _employeeService = employeeService;
-        }
-
 		[HttpGet(nameof(GetEmployees))]
-		public async Task<IEnumerable<EmployeeView>> GetEmployees()
+		public async Task<IEnumerable<EmployeeView>> GetEmployees(
+            [FromServices] IEmployeeService employeeService
+            )
 		{
-            var empList = await _employeeService.GetEmployees();
+            var empList = await employeeService.GetEmployees();
             return empList;
 		}
 
 		[HttpGet(nameof(GetEmployeeById))]
-        public async Task<string> GetEmployeeById(int EmpID)
+        public async Task<string> GetEmployeeById(
+            [FromServices] IEmployeeService employeeService,
+            int EmpId)
         {
-            var result = await _employeeService.GetEmployeebyId(EmpID);
+            var result = await employeeService.GetEmployeebyId(EmpId);
             return result;
         }
 
         [HttpGet(nameof(GetEmployeeDetails))]
-        public async Task<EmployeeView> GetEmployeeDetails(int EmpId)
+        public async Task<EmployeeView> GetEmployeeDetails(
+            [FromServices] IEmployeeService employeeService,
+            int EmpId)
         {
-            var result = await _employeeService.GetEmployeeDetails(EmpId);
+            var result = await employeeService.GetEmployeeDetails(EmpId);
             return result;
         }
 

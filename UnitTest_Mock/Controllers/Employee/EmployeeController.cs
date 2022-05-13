@@ -4,7 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using UnitTest_Mock.Services;
+using UnitTest_Mock.Controllers.Employee.QueryServices;
+using UnitTest_Mock.Controllers.Employee.View;
 
 namespace UnitTest_Mock.Controllers
 {
@@ -20,7 +21,7 @@ namespace UnitTest_Mock.Controllers
         }
 
 		[HttpGet(nameof(GetEmployees))]
-		public async Task<IEnumerable<Employee>> GetEmployees()
+		public async Task<IEnumerable<EmployeeView>> GetEmployees()
 		{
             var empList = await _employeeService.GetEmployees();
             return empList;
@@ -34,9 +35,9 @@ namespace UnitTest_Mock.Controllers
         }
 
         [HttpGet(nameof(GetEmployeeDetails))]
-        public async Task<Employee> GetEmployeeDetails(int EmpID)
+        public async Task<EmployeeView> GetEmployeeDetails(int EmpId)
         {
-            var result = await _employeeService.GetEmployeeDetails(EmpID);
+            var result = await _employeeService.GetEmployeeDetails(EmpId);
             return result;
         }
 

@@ -1,4 +1,5 @@
 ﻿using Entities.Configuration;
+using Entities.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 
